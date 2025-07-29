@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Velvet Bean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://purechiropractor.com/wp-content/uploads/2016/10/coffee-min.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Quicksand', sans-serif;
+      color: #3e2f1c;
+    }
+
+    header, main, footer, section {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    nav a {
+      background-color: #6f4e37;
+      color: #fff;
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #a67c52;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    section p {
+      line-height: 1.6;
+      font-size: 1.1em;
+      margin-bottom: 12px;
+    }
+
+    button {
+      background-color: #6f4e37;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #a67c52;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 60%;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to <em>The Velvet Bean</em></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="https://purechiropractor.com/wp-content/uploads/2016/10/coffee-min.jpg" alt="Warm coffee shop vibes" />
+    <section>
+      <p>Life’s too short for average coffee. Step into our little haven, where beans meet magic
+      <p>Every brew tells a story, and every cup is made with care
+      From bold espressos to dreamy lattes, we’ve got your cravings covered
+      Take a break, meet a friend, or simply lose yourself in the flavor
+      Locally roasted, globally loved
+      Whether you’re here to hustle or unwind—we’ve got the perfect corner waiting for you
+      Pull up a chair, sip slowly, and let your senses awaken
+      Thanks for making us part of your daily ritual
+      Warm smiles. Cozy seats. Rich brews. Welcome home.</p>
+    </section>
+
+    <section>
+      <h2>☕ Today’s Special</h2>
+      <p><strong>Vanilla Cardamom Latte</strong> – A silky blend of vanilla and aromatic cardamom with steamed oat milk. Served hot or iced.</p>
+      <button onclick="alert('Yum! We’ll save one for you.')">Order Now</button>
+    </section>
+
+    <section>
+      <h2>🎶 Café Vibes</h2>
+      <p>Let our mellow playlist be the backdrop to your perfect brew.</p>
+      <iframe height="80" src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=0&controls=0" title="Café Music" allowfullscreen></iframe>
+    </section>
+
+    <section>
+      <h2>📬 Stay Connected</h2>
+      <p>Join our newsletter for specials and beanside gossip.</p>
+      <form>
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Velvet Bean. All rights reserved.</p>
+  </footer>
+</body>
+</html>
