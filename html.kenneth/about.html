@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kenneth’s Car Dealership</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & global */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* Background photo */
+      background: url('https://i.pinimg.com/1200x/be/60/77/be607748d6e4165a241133b10df512fd.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Hide all sections by default */
+    #home, #cars, #about, #contact { display: none; }
+
+    /* Header */
+    header {
+      background: rgba(30,30,30,0.85);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; }
+    header p  { font-size: 1rem; opacity: .8; }
+
+    /* Navigation */
+    nav {
+      background: rgba(51,51,51,0.85);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav ul li { margin: 0 15px; }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .3s;
+      cursor: pointer;
+    }
+    nav ul li a:hover { color: #ff9800; }
+
+    /* Hero */
+    .hero {
+      background: rgba(0,0,0,0.4) url('html.kenneth/Copilot_20250731_084114.png') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p  { font-size: 1.1rem; opacity: .9; }
+
+    /* Download button under background */
+    .download-bg {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff9800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background .3s;
+    }
+    .download-bg:hover {
+      background: #e68900;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 60px 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #1e1e1e;
+    }
+
+    /* Car Cards */
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .car-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .car-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #1e1e1e;
+    }
+    .card-content p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      color: #ff5722;
+      font-weight: 600;
+    }
+
+    /* Contact Info */
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+    .contact-info a {
+      color: #1e88e5;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(30,30,30,0.85);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: .9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kenneth’s Car Dealership</h1>
+    <p>Your trusted destination for quality vehicles in Mbombela, Nelspruit</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a onclick="showSection('home')">Home</a></li>
+      <li><a onclick="showSection('cars')">Cars</a></li>
+      <li><a onclick="showSection('about')">About Us</a></li>
+      <li><a onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+<!-- Insert inside your <section id="home" class="hero"> -->
+  <section id="home" class="hero">
+    <h2>Top Deals on Luxury & Used Cars</h2>
+    <p>Browse our premium selection and drive away happy</p>
+    <form class="search-form" onsubmit="searchCars(event)">
+      <input type="text" id="carSearch" placeholder="Search by car model..." />
+      <button type="submit">Search</button>
+    </form>
+  </section>
+  
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <h2>Top Deals on Luxury & Used Cars</h2>
+    <p>Browse our premium selection and drive away happy</p>
+    <!-- Download link under background -->
+    <a
+      href="https://example.com/kenneth-background.jpg"
+      class="download-bg"
+      target="_blank"
+      rel="noopener"
+    >
+    Browse our premium selection and drive away happy
+    </a>
+  </section>
+
+  <!-- CARS -->
+  <section id="cars" class="section">
+    <h2>Our Cars</h2>
+    <div class="cars">
+      <!-- 10 Car Cards -->
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/e4/83/6f/e4836fef422c431bba503d7c8a8736ca.jpg" alt="Toyota Hilux">
+        <div class="card-content">
+          <h3>Toyota Hilux</h3>
+          <p>R 400,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/c1/22/e8/c122e8265c15ecb3916bc65e31d3333c.jpg" alt="BMW X3">
+        <div class="card-content">
+          <h3>BMW X3</h3>
+          <p>R 700,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/736x/4b/ec/76/4bec76069c7c272c40034e4114a44e19.jpg" alt="Volkswagen Polo">
+        <div class="card-content">
+          <h3>Volkswagen Polo</h3>
+          <p>R 250,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/62/e6/94/62e6945e8539e24533d629821a7cbc40.jpg" alt="Mercedes C-Class">
+        <div class="card-content">
+          <h3>Mercedes C-Class</h3>
+          <p>R 800,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/bd/28/e3/bd28e367a55595fcb776af382affa33b.jpg" alt="Audi A4">
+        <div class="card-content">
+          <h3>Audi A4</h3>
+          <p>R 750,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/56/73/55/56735567e374ee64c2bd6419f675adc0.jpg" alt="Ford Ranger">
+        <div class="card-content">
+          <h3>Ford Ranger</h3>
+          <p>R 450,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/cb/0d/4c/cb0d4c1b41b00edf7a59b1813eb8e318.jpg" alt="Honda Civic">
+        <div class="card-content">
+          <h3>Honda Civic</h3>
+          <p>R 350,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/ac/0e/40/ac0e4059eab6fc1e1bd4d069779affd4.jpg" alt="Nissan Navara">
+        <div class="card-content">
+          <h3>Nissan Navara</h3>
+          <p>R 500,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/736x/aa/78/05/aa7805ac950dd2214ae7420e30834b0c.jpg" alt="Chevrolet Camaro">
+        <div class="card-content">
+          <h3>Chevrolet Camaro</h3>
+          <p>R 900,000</p>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="https://i.pinimg.com/1200x/d2/f1/ac/d2f1ac5bedd98519e5111143c9bec7e4.jpg" alt="Jeep Wrangler">
+        <div class="card-content">
+          <h3>Jeep Wrangler</h3>
+          <p>R 850,000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>Kenneth Mthinsi Car Dealership is your trusted destination for quality vehicles in Mbombela, Nelspruit. With years of experience and dedication, we offer a wide range of cars to suit every lifestyle and budget.</p>
+    <p>We’re passionate about helping you find the perfect car, and we pride ourselves on honest service and unbeatable deals. Visit us and experience automotive excellence.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Phone:</strong> <a href="tel:+27724731616">+27 72 473 1616</a></p>
+      <p><strong>Email:</strong> <a href="mailto:juniornhlakaniphomthinsi17@gmail.com">juniornhlakaniphomthinsi17@gmail.com</a></p>
+      <p><strong>Location:</strong> Mbombela, Nelspruit, South Africa</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Kenneth Mthinsi Car Dealership. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      ['home','cars','about','contact'].forEach(sec => {
+        document.getElementById(sec).style.display = sec === id ? 'block' : 'none';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => showSection('home'));
+  </script>
+
+</body>
+</html>
